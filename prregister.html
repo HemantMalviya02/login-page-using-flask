@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Project</title>
+    <link rel="stylesheet" href="../static/prstyle.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  </head>
+  <body class="bg-nav">
+    <nav class="navbar">
+        <a href="" class="navbar-brand text-light">Expense App</a>
+    </nav>
+    <div class="container">
+        <div class="row"> 
+            <div class="col-md-8">
+                <h1 class="text-light display-4 mt-100" style="font-size: 80px;">Bring the power of Analytics at your Smartphone</h1>
+            </div>
+            <div class="col-md-4">
+                <div class="card mt-100">
+                    {% if mes2 is defined %}
+                    <div class="alert alert-danger alert-dismissible">
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                        {{mes2}}
+                      </div>
+                    {% endif %}
+                    <div class="card-body">
+                        <p>{{mes}}</p>
+                        <form class="form" method="post" action="/add_user">
+                            <label>Name</label><br>
+                            <input type="text" class="form-control" name="uname"><br>
+                            <label>Email</label><br>
+                            <input type="email" class="form-control" name="uemail"><br>
+                            <label>Password</label><br>
+                            <input type="password" class="form-control" name="upassword"><br>
+                            <div class="g-recaptcha" data-sitekey="6LdqydQoAAAAABSNAVLsVEsV6_RYXNHx3uwZDp_G"></div><br>
+                            <input type="submit" class="btn btn-primary btn-block btn-lg" value="Login">
+                        </form>
+                        <p>Already a Member? <a href="/">Login Here</a></p>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>
+    
+    
+    <script src="https://www.google.com/recaptcha/api.js?" async defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+  </body>
+</html>  
